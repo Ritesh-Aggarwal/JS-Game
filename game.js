@@ -6,7 +6,13 @@ var started = false;
 var free = false;
 var sound = true;
 
-
+$(".switch").click(function(){
+  var p = $("#check");
+  if(p.checked == true)
+    sound = false;
+  else if(p.checked == false)
+    sound = true;
+})
 
 function playSound(p) {
     if(sound){
@@ -22,11 +28,14 @@ function btnpressed(key){
 }
 
 function handler(event) {
-    if(event.type == "click")
+    if(event.type == "click"){
         var k = event.currentTarget.firstChild.data;
+        k = k.toLowerCase();
+    }
     else if (event.type == "keypress")
         var k = event.key;
     userpattern.push(k);
+    //console.log(k);
 }
 
 $(".ctrl").click(handler);
@@ -52,7 +61,8 @@ function checkAnswer(currentLevel) {
           nextSequence();
         }, 1000);
       }
-    } else {
+    }
+    else {
       playSound("wrong");
       $("h1").addClass("game-over");
       $("h1").text("Game Over, Press Any Key to Restart");
@@ -71,6 +81,8 @@ $(".ctrl").click(function (e){
         $("h1").text("Level " + level);
         nextSequence();
         started = true;
+        btnpressed(event.key);
+        return;
       }
     playSound(e.currentTarget.firstChild.data);
     btnpressed(e.currentTarget.firstChild.data);
@@ -82,6 +94,8 @@ $(document).keypress(function(event) {
       $("h1").text("Level " + level);
       nextSequence();
       started = true;
+      btnpressed(event.key);
+      return;
     }
     playSound(event.key);
     btnpressed(event.key);
