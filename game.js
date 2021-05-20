@@ -23,7 +23,7 @@ function playSound(p) {
 
 function btnpressed(key){
     $("#" + key).addClass("pressed");
-    setTimeout(function(){ $("#" + key).removeClass("pressed"); }, 100);
+    setTimeout(function(){ $("#" + key).removeClass("pressed"); }, 300);
     c++;
 }
 
