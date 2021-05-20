@@ -23,7 +23,7 @@ function playSound(p) {
 
 function btnpressed(key){
     $("#" + key).addClass("pressed");
-    setTimeout(function(){ $("#" + key).removeClass("pressed"); }, 300);
+    setTimeout(function(){ $("#" + key).removeClass("pressed"); }, 200);
     c++;
 }
 
@@ -81,7 +81,7 @@ $(".ctrl").click(function (e){
         $("h1").text("Level " + level);
         nextSequence();
         started = true;
-        btnpressed(event.key);
+        btnpressed(e.currentTarget.firstChild.data);
         return;
       }
     playSound(e.currentTarget.firstChild.data);
