@@ -21,7 +21,7 @@ $("#check").change(function () {
 });
 
 function playSound(p) {
-    if(btns.includes(p) == true && sound == true){
+    if(sound == true){
         var ad = new Audio("assets/"+ p +".mp3");
         ad.play();
     }
