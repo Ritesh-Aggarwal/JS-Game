@@ -53,6 +53,11 @@ div img{
     min-width: 70%;
 }
 
+img{
+  border: 0px !important;
+  margin-top: 10px;
+}
+
 @media (max-width : 650px) {
     #b,#f{
         min-width: 97%;
@@ -136,11 +141,3 @@ div img{
     border-radius: 50%;
   }
 
-  #icon{
-      color: rgb(219, 205, 205);
-  }
-
-  img{
-      border: 0px !important;
-      margin-top: 10px;
-  }
