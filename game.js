@@ -3,19 +3,25 @@ var gamepattern = [];
 var userpattern = [];
 var level = 0;
 var started = false;
-var free = false;
+// var free = false;
 var sound = true;
 
-$(".switch").click(function(){
-  var p = $("#check");
-  if(p.checked == true)
+$("#check").change(function () { 
+  if(this.checked == true){
     sound = false;
-  else if(p.checked == false)
-    sound = true;
-})
+    console.log("sound on");
+    $("#icon").html('<img src="assets/sound-on.png"></img>');
+  }
+  else if(this.checked == false){
+    sound = false;
+    console.log("sound off");
+    $("#icon").html('<img src="assets/volume-off.png"></img>');
+  }
+  
+});
 
 function playSound(p) {
-    if(sound){
+    if(btns.includes(p) == true && sound == true){
         var ad = new Audio("assets/"+ p +".mp3");
         ad.play();
     }
