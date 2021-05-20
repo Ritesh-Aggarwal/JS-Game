@@ -8,7 +8,7 @@ var sound = true;
 
 $("#check").change(function () { 
   if(this.checked == true){
-    sound = false;
+    sound = true;
     console.log("sound on");
     $("#icon").html('<img src="assets/sound-on.png"></img>');
   }
