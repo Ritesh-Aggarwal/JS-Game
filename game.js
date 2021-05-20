@@ -30,7 +30,6 @@ function playSound(p) {
 function btnpressed(key){
     $("#" + key).addClass("pressed");
     setTimeout(function(){ $("#" + key).removeClass("pressed"); }, 200);
-    c++;
 }
 
 function handler(event) {
@@ -83,15 +82,17 @@ function checkAnswer(currentLevel) {
 }
 
 $(".ctrl").click(function (e){
+    var k = e..currentTarget.firstChild.data;
+    k = k.toLowerCase();
     if (!started) {
         $("h1").text("Level " + level);
         nextSequence();
         started = true;
-        btnpressed(e.currentTarget.firstChild.data);
+        btnpressed(k);
         return;
       }
-    playSound(e.currentTarget.firstChild.data);
-    btnpressed(e.currentTarget.firstChild.data);
+    playSound(k);
+    btnpressed(k);
     checkAnswer(userpattern.length - 1);
 });
 
