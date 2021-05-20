@@ -82,7 +82,7 @@ function checkAnswer(currentLevel) {
 }
 
 $(".ctrl").click(function (e){
-    var k = e..currentTarget.firstChild.data;
+    var k = e.currentTarget.firstChild.data;
     k = k.toLowerCase();
     if (!started) {
         $("h1").text("Level " + level);
