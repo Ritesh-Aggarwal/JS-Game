@@ -101,7 +101,9 @@ $(".ctrl").click(function (e){
     k = k.toLowerCase();
     if (started == false && game == true) {
         $("h1").text("Level " + level);
-        nextSequence();
+        setTimeout(function () {
+          nextSequence();
+        }, 1000);
         started = true;
         btnpressed(k);
         return;
@@ -116,7 +118,9 @@ $(document).keypress(function(event) {
     if(game==true){
       if (started == false) {
       $("h1").text("Level " + level);
-      nextSequence();
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
       started = true;
       btnpressed(event.key);
       return;
