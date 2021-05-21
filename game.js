@@ -3,7 +3,7 @@ var gamepattern = [];
 var userpattern = [];
 var level = 0;
 var started = false;
-// var free = false;
+var game = true;
 var sound = true;
 
 $("#check").change(function () { 
@@ -16,6 +16,20 @@ $("#check").change(function () {
     sound = false;
     console.log("sound off");
     $("#icon").html('<img src="assets/volume-off.png"></img>');
+  }
+  
+});
+
+$("#game").change(function () { 
+  if(this.checked == true){
+    game = false;
+    console.log("game on");
+    $("h1").text("Free play");
+  }
+  else if(this.checked == false){
+    game = true;
+    console.log("game off");
+    $("h1").text("Press any key to start!");
   }
   
 });
@@ -84,7 +98,7 @@ function checkAnswer(currentLevel) {
 $(".ctrl").click(function (e){
     var k = e.currentTarget.firstChild.data;
     k = k.toLowerCase();
-    if (!started) {
+    if (started == false && game == true) {
         $("h1").text("Level " + level);
         nextSequence();
         started = true;
@@ -93,20 +107,23 @@ $(".ctrl").click(function (e){
       }
     playSound(k);
     btnpressed(k);
-    checkAnswer(userpattern.length - 1);
+    if(game == true)
+      checkAnswer(userpattern.length - 1);
 });
 
 $(document).keypress(function(event) {
-    if (!started) {
+    if(game==true){
+      if (started == false) {
       $("h1").text("Level " + level);
       nextSequence();
       started = true;
       btnpressed(event.key);
       return;
     }
+    checkAnswer(userpattern.length - 1);
+  }
     playSound(event.key);
     btnpressed(event.key);
-    checkAnswer(userpattern.length - 1);
   });
 
 function startOver() {

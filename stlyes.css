@@ -1,6 +1,7 @@
 body{
     text-align: center;
     line-height: 1.5;
+    font-family: 'Press Start 2P', cursive;
     background: #0F2027;  /* fallback for old browsers */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -15,7 +16,7 @@ h1{
     color: red;
 }
 
-div img{
+#main{
     border: 5px solid black;
     padding: 0;
     border-radius: 30px;
@@ -24,7 +25,7 @@ div img{
     margin-bottom: 30px;
 }
 .btn{
-    font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -51,11 +52,19 @@ div img{
 .controls{
     display: inline-block;
     min-width: 70%;
+    margin-bottom: 30px;
 }
 
-img{
+#img{
   border: 0px !important;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.icon{
+  font-size: 0.7rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width : 650px) {
@@ -80,7 +89,7 @@ img{
 /* The switch - the box around the slider */
 .switch {
     position: relative;
-    margin: 50px auto auto auto;
+    margin: auto;
     display: block;
     width: 60px;
     height: 34px;
