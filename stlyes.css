@@ -69,10 +69,10 @@ h1{
 
 @media (max-width : 650px) {
     #b,#f{
-        min-width: 97%;
+        min-width: 95%;
     }
     #d,#e,#c{
-       min-width: 30%; 
+       min-width: 26%; 
     }
 }
 
@@ -80,7 +80,7 @@ h1{
     h1{
         font-size: 1.6rem;
     }
-    div img{
+    #main{
         max-width: 90%;
     }
 }
