@@ -29,6 +29,7 @@ $("#game").change(function () {
   else if(this.checked == false){
     game = true;
     console.log("game off");
+    gamepattern = [];
     $("h1").text("Press any key to start!");
   }
   
